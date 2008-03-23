@@ -6,15 +6,16 @@
 %define	pdir	Devel
 %define	pnam	Cover
 Summary:	Devel::Cover - Code coverage metrics for Perl
-#Summary(pl):	
+Summary(pl.UTF-8):	Devel::Cover - metryki pokrycia kodu dla Perla
 Name:		perl-Devel-Cover
 Version:	0.63
 Release:	1
 # same as perl 
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/P/PJ/PJCJ/Devel-Cover-0.63.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	9ca1c12b1406989d22a9da15468ff80a
+URL:		http://search.cpan.org/dist/Devel-Cover/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,8 +27,12 @@ Devel::Cover you can find areas of code not exercised by your tests
 and find out which tests to create to increase coverage. Code coverage
 can be considered as an indirect measure of quality.
 
-# %description -l pl
-# TODO
+%description -l pl.UTF-8
+Ten moduł udostępnia metryki pokrycia kodu dla Perla. Metryki te
+opisują jak dokładnie testy sprawdzają kod. Dzięki użyciu Devel::Cover
+można odnaleźć obszary kodu nie sprawdzane przez testy i określić,
+jakie testy należy stworzyć, aby zwiększyć pokrycie. Pokrycie kodu
+można uznać jako niebezpośrednią miarę jakości.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -73,4 +78,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/cpancover
 %attr(755,root,root) %{_bindir}/gcov2perl
 %{_mandir}/man1/*
-#%%{perl_vendorlib}/Devel/*.pm
