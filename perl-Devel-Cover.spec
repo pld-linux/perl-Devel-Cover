@@ -8,13 +8,13 @@
 Summary:	Devel::Cover - Code coverage metrics for Perl
 Summary(pl.UTF-8):	Devel::Cover - metryki pokrycia kodu dla Perla
 Name:		perl-Devel-Cover
-Version:	0.63
-Release:	2
+Version:	0.64
+Release:	1
 # same as perl 
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	9ca1c12b1406989d22a9da15468ff80a
+# Source0-md5:	6d90f2eb1eb64f27f2289be6f51d2d02
 URL:		http://search.cpan.org/dist/Devel-Cover/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
