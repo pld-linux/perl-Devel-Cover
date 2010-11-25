@@ -12,7 +12,8 @@ Version:	0.73
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
+#Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://sunsite.icm.edu.pl/pub/CPAN//modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	f420bcac60850bef8736f439283828ce
 URL:		http://search.cpan.org/dist/Devel-Cover/
 BuildRequires:	perl-devel >= 1:5.8.0
