@@ -8,17 +8,27 @@
 Summary:	Devel::Cover - Code coverage metrics for Perl
 Summary(pl.UTF-8):	Devel::Cover - metryki pokrycia kodu dla Perla
 Name:		perl-Devel-Cover
-Version:	0.79
+Version:	0.96
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-#Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
-Source0:	http://sunsite.icm.edu.pl/pub/CPAN//modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	476037bb7dc7b075de355832de16f2ca
+Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	954253ba6b24a575c12d5a9010306f4a
 URL:		http://search.cpan.org/dist/Devel-Cover/
-BuildRequires:	perl-devel >= 1:5.8.0
-%{?with_tests:BuildRequires:	perl-Test-Warn}
+BuildRequires:	perl-devel >= 1:5.8.2
 BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
+BuildRequires:	perl-Test-Simple
+BuildRequires:	perl-Test-Warn
+%endif
+Requires:	perl-modules >= 1:5.8.2
+Suggests:	perl-Browser-Open
+Suggests:	perl-JSON-PP
+Suggests:	perl-PPI-HTML >= 1.07
+Suggests:	perl-Perl-Tidy >= 20060719
+Suggests:	perl-Pod-Coverage >= 0.06
+Suggests:	perl-Pod-Coverage-CountParents
+Suggests:	perl-Test-Differences
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -59,7 +69,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{perl_vendorarch}/Devel/*.pm
+%attr(755,root,root) %{_bindir}/cover
+%attr(755,root,root) %{_bindir}/cpancover
+%attr(755,root,root) %{_bindir}/gcov2perl
+%{perl_vendorarch}/Devel/Cover.pm
 %dir %{perl_vendorarch}/Devel/Cover
 %{perl_vendorarch}/Devel/Cover/*.pm
 %dir %{perl_vendorarch}/Devel/Cover/Annotation
@@ -76,8 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/Devel/Cover
 %{perl_vendorarch}/auto/Devel/Cover/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Devel/Cover/*.so
-%{_mandir}/man3/*
-%attr(755,root,root) %{_bindir}/cover
-%attr(755,root,root) %{_bindir}/cpancover
-%attr(755,root,root) %{_bindir}/gcov2perl
-%{_mandir}/man1/*
+%{_mandir}/man3/Devel::Cover*.3pm*
+%{_mandir}/man1/cover.1p*
+%{_mandir}/man1/cpancover.1p*
+%{_mandir}/man1/gcov2perl.1p*
