@@ -25,10 +25,10 @@ Requires:	perl-modules >= 1:5.8.2
 Suggests:	perl-Browser-Open
 Suggests:	perl-JSON-PP
 Suggests:	perl-PPI-HTML >= 1.07
-Suggests:	perl-Perl-Tidy >= 20060719
 Suggests:	perl-Pod-Coverage >= 0.06
 Suggests:	perl-Pod-Coverage-CountParents
 Suggests:	perl-Test-Differences
+Suggests:	perltidy >= 20060719
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
