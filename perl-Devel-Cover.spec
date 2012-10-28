@@ -26,7 +26,6 @@ Suggests:	perl-Browser-Open
 Suggests:	perl-JSON-PP
 Suggests:	perl-PPI-HTML >= 1.07
 Suggests:	perl-Pod-Coverage >= 0.06
-Suggests:	perl-Pod-Coverage-CountParents
 Suggests:	perl-Test-Differences
 Suggests:	perltidy >= 20060719
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
