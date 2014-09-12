@@ -88,7 +88,6 @@ rm -rf $RPM_BUILD_ROOT
 # or move to subpackage?
 %{perl_vendorarch}/Devel/Cover/Tutorial.pod
 %dir %{perl_vendorarch}/auto/Devel/Cover
-%{perl_vendorarch}/auto/Devel/Cover/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Devel/Cover/*.so
 %{_mandir}/man3/Devel::Cover*.3pm*
 %{_mandir}/man1/cover.1p*
