@@ -1,23 +1,31 @@
 #
 # Conditional build:
-%bcond_with	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define	pdir	Devel
 %define	pnam	Cover
 Summary:	Devel::Cover - Code coverage metrics for Perl
 Summary(pl.UTF-8):	Devel::Cover - metryki pokrycia kodu dla Perla
 Name:		perl-Devel-Cover
-Version:	1.33
-Release:	2
+Version:	1.36
+Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	f9bed81fa10d9ee94859347593dca503
-URL:		http://search.cpan.org/dist/Devel-Cover/
-BuildRequires:	perl-devel >= 1:5.8.2
+# Source0-md5:	3430734551004b6b7e46505d1d9578a0
+URL:		https://metacpan.org/release/Devel-Cover
+BuildRequires:	perl-devel >= 1:5.10.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
+BuildRequires:	perl-B-Debug
 BuildRequires:	perl-Digest-MD5
+BuildRequires:	perl-HTML-Parser >= 3.69
+BuildRequires:	perl-JSON-MaybeXS
+BuildRequires:	perl-Moo
+BuildRequires:	perl-Sereal-Decoder
+BuildRequires:	perl-Sereal-Encoder
+BuildRequires:	perl-Storable
 BuildRequires:	perl-Test-Simple
 BuildRequires:	perl-Test-Warn
 %endif
